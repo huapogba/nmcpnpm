@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tra Cứu Tài Khoản Khách Hàng</title>
+  <link rel="stylesheet" href="css/tracuukhachhang.css">
+  <script src="js/tracuukhachhang.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Tra Cứu Tài Khoản Khách Hàng</h1>
+    <input type="text" id="searchInput" placeholder="Nhập tên hoặc email để tìm kiếm..." oninput="searchUsers()">
+
+    <table id="accountTable">
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Số điện thoại</th>
+          <th>Mật khẩu</th>
+          <th>Vai trò</th>
+        </tr>
+      </thead>
+      <tbody id="accountList">
+        <!-- Kết quả tài khoản sẽ hiển thị tại đây -->
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
