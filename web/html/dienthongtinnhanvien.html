@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nhập Thông Tin Nhân Viên</title>
+  <link rel="stylesheet" href="css/dienthongtinnhanvien.css">
+  <script src="js/dienthongtinnhanvien.js" defer></script>
+</head>
+<body>
+  <div id="notification" class="notification" style="display: none;">
+    <span id="notification-message"></span>
+  </div>
+
+  <div class="form-container">
+    <h2>Nhập Thông Tin Nhân Viên</h2>
+    <form id="employee-form">
+      <div class="form-group">
+        <label for="fullname">Họ và tên:</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Nhập họ và tên">
+      </div>
+
+      <div class="form-group">
+        <label for="dob">Ngày sinh:</label>
+        <input type="date" id="dob" name="dob">
+      </div>
+
+      <div class="form-group">
+        <label for="cccd">Số CCCD:</label>
+        <input type="text" id="cccd" name="cccd" placeholder="Nhập số CCCD">
+      </div>
+
+      <div class="form-group">
+        <label for="address">Địa chỉ:</label>
+        <input type="text" id="address" name="address" placeholder="Nhập địa chỉ">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Số điện thoại:</label>
+        <input type="tel" id="phone" name="phone" pattern="(\+84|0)\d{9}" placeholder="Nhập số điện thoại">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Nhập email">
+      </div>
+
+      <div class="form-group">
+        <label for="position">Chức vụ:</label>
+        <select id="position" name="position">
+          <option value="Nhân viên phục vụ">Nhân viên phục vụ</option>
+          <option value="Nhân Viên bếp">Nhân viên bếp</option>
+          <option value="Nhân viên kho">Nhân viên kho</option>
+          <option value="Nhân viên thu ngân">Nhân viên thu ngân</option>
+          <option value="Nhân viên cskh">Nhân viên CSKH</option>
+          <option value="Quản lí">Quản lí</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="status">Trạng thái tài khoản:</label>
+        <select id="status" name="status">
+          <option value="Hoạt động">Hoạt động</option>
+          <option value="Đã khóa">Đã nghỉ</option>
+        </select>
+      </div>
+
+      <button type="submit">Lưu Thông Tin</button>
+    </form>
+  </div>
+</body>
+</html>
+
+
+
