@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thực đơn - Bug Restaurant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/menu.css">
+  <script src="js/menu.js" defer></script>
+</head>
+<body>
+
+
+  <div class="sidebar">
+    <h2>Chức năng</h2>
+    <a href="#menu" id="btn-menu">Thực đơn</a>
+    <a href="lichsudathang.html" class="menu-btn" id="btn-lichsu">Lịch sử đặt hàng</a>
+    <a href="ykienkhachhang.html" class="menu-btn" id="btn-ykien">Ý kiến khách hàng</a>
+    <a href="xemykienkhachhang.html" class="menu-btn" id="btn-xemykien">Đánh giá của khách hàng</a>
+    <a href="quanlikho.html" class="menu-btn" id="btn-kho">Quản lí kho</a>
+    <a href="tracuunhanvien.html" class="menu-btn" id="btn-tracuunv">Tra cứu nhân viên</a>
+    <a href="dienthongtinnhanvien.html" class="menu-btn" id="btn-dknv">Đăng kí nhân viên</a>
+    <a href="tracuukhachhang.html" class="menu-btn" id="btn-tracukh">Tra cứu khách hàng</a>
+    <a href="hoadon.html" class="menu-btn" id="btn-hoadon">In hóa đơn</a>
+    <a href="lichlamviec.html" class="menu-btn" id="btn-lichlamviec">Lịch làm việc</a>
+    <a href="#" class="menu-btn" id="btn-logout">Đăng xuất</a>
+
+
+  </div>
+
+
+  <div class="main-content">
+    <div id="menu" class="menu-container">
+      <h1 class="menu-title">Thực đơn</h1>
+
+      <div class="menu-buttons">
+        <button class="menu-btn" onclick="showMenu('starter')">Món nướng</button>
+        <button class="menu-btn" onclick="showMenu('main')">Món lẩu</button>
+        <button class="menu-btn" onclick="showMenu('dessert')">Các món rau</button>
+      </div>
+
+      <div id="starter" class="menu-section">
+        <h2 class="section-title">Món nướng</h2>
+        <button class="add-btn" onclick="openAddForm('starter')">+ Thêm món nướng</button>
+        <div class="menu-grid" id="starter-list"></div>
+      </div>
+
+      <div id="main" class="menu-section">
+        <h2 class="section-title">Món lẩu</h2>
+        <button class="add-btn" onclick="openAddForm('main')">+ Thêm món lẩu</button>
+        <div class="menu-grid" id="main-list"></div>
+      </div>
+
+      <div id="dessert" class="menu-section">
+        <h2 class="section-title">Các món rau</h2>
+        <button class="add-btn" onclick="openAddForm('dessert')">+ Thêm món rau</button>
+        <div class="menu-grid" id="dessert-list"></div>
+      </div>
+    </div>
+
+    <!-- Form thêm món ăn -->
+    <div id="add-form" class="add-form-overlay">
+      <div class="add-form-box">
+        <input type="hidden" id="dish-category" />
+        <h3>Thêm món ăn</h3>
+          <input type="text" id="dish-name" placeholder="Tên món ăn" required />
+          <input type="number" id="dish-price" placeholder="Giá (VD: 50000)" required />
+          <input type="text" id="dish-img" placeholder="Link ảnh (tùy chọn)" />
+
+          <!-- Phần nguyên liệu -->
+          <div id="ingredients-container">
+          <div class="ingredient-input">
+          
+    </div>
+</div>
+
+
+<!-- Nút lưu và hủy -->
+<br />
+<button onclick="submitDish()">Lưu</button>
+<button onclick="closeAddForm()">Hủy</button>
+
+      </div>
+    </div>
+
+    <!-- Giỏ hàng -->
+    <h2>Giỏ hàng</h2>
+ <div class="cart-container">
+  <table id="cart-table">
+    <thead>
+      <tr>
+        <th>Tên món</th>
+        <th>SL</th>
+        <th>Giá</th>
+        <th>Xóa</th>
+      </tr>
+    </thead>
+    <tbody id="cart-items">
+      <!-- Các dòng sẽ scroll -->
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4" id="cart-total">Tổng: 0đ</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+<button id="confirm-order" onclick="confirmOrder()">Xác nhận đơn hàng</button>
+
+
+    <div id="empty-cart-modal" class="modal hidden">
+      <div class="modal-content">
+        <p>Vui lòng chọn ít nhất một món ăn</p>
+        <button onclick="closeModal2()">Đóng</button>
+      </div>
+    </div>
+
+    <div id="order-confirmation" class="modal hidden">
+      <div class="modal-content">
+        <p>Đơn hàng đang được xác nhận...</p>
+      </div>
+    </div>
+
+    <div id="order-confirmed-modal" class="modal hidden">
+      <div class="modal-content">
+        <p>Đơn hàng của bạn đã được xác nhận!</p>
+        <button onclick="closeOrderConfirmedModal()">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="delete-confirm-modal" class="confirm-overlay" style="display: none;">
+    <div class="confirm-box">
+      <p>Bạn có chắc chắn muốn xóa món này không?</p>
+      <div class="confirm-buttons">
+        <button id="btn-delete-yes">Có</button>
+        <button id="btn-delete-no">Không</button>
+      </div>
+    </div>
+  </div>
+
+ <div id="messageModal" class="modal hidden">
+  <div class="modal-content">
+    <p id="modalMessage"></p>
+    <button onclick="closeModal()">Đóng</button>
+  </div>
+ </div>
+
+<!-- Chatbot -->
+<div class="chat-popup" id="myForm">
+  <div class="form-container">
+    <h1>Restaurant Chat</h1>
+    <div id="chat-box" class="chat-box"></div>
+    <textarea id="msg" placeholder="Type your message..." required></textarea>
+    <button class="btn" onclick="sendMessage()">Send</button>
+    <button class="btn cancel" onclick="closeForm()">Close</button>
+  </div>
+</div>
+
+<button class="chat-toggle-button" onclick="openForm()">
+  💬
+</button>
+<link rel="stylesheet" href="css/chat.css">
+<script src="js/chat.js"defer></script>
+
+
+
+</div>
+</body>
+</html>
+
+
+
+

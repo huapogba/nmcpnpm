@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tra Cứu Thông Tin Nhân Viên</title>
+  <link rel="stylesheet" href="css/tracuunhanvien.css">
+  <script src="js/tracuunhanvien.js" defer></script>
+</head>
+<body>
+  <div class="search-container">
+    <h2>Tra Cứu Nhân Viên</h2>
+    <form id="search-form">
+      <div class="form-group">
+        <label for="search-cccd">Tìm kiếm theo số SDT:</label>
+        <input type="text" id="search-cccd" placeholder="Nhập số SDT" required>
+      </div>
+      <button type="submit">Tìm Kiếm</button>
+    </form>
+
+    <div id="employee-info" class="employee-info">
+      <h3>Thông Tin Nhân Viên</h3>
+      <table id="employee-table">
+        <tr><td><strong>Họ và Tên:</strong></td><td id="full-name"></td></tr>
+        <tr><td><strong>Ngày sinh:</strong></td><td id="dob"></td></tr>
+        <tr><td><strong>Số CCCD:</strong></td><td id="cccd"></td></tr>
+        <tr><td><strong>Địa chỉ:</strong></td><td id="address"></td></tr>
+        <tr><td><strong>Số điện thoại:</strong></td><td id="phone"></td></tr>
+        <tr><td><strong>Email:</strong></td><td id="email"></td></tr>
+        <tr><td><strong>Chức vụ:</strong></td><td id="position"></td></tr>
+        <tr><td><strong>Trạng thái tài khoản:</strong></td><td id="status"></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button id="edit-btn">Sửa</button>
+    <button id="save-btn" style="display: none;">Lưu</button>
+  </div>
+
+  <!-- Thông báo thành công -->
+ <div id="success-message" class="success-message" style="display: none;"></div>
+
+  
+</body>
+</html>
