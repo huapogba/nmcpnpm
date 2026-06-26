@@ -4,7 +4,7 @@ Dự án là website quản lý nhà hàng được xây dựng bằng HTML, CSS
 
 ## Demo
 
-[Video demo](demo/demo.mp4)
+[Video demo](demo)
 
 ## Chức năng chính
 
