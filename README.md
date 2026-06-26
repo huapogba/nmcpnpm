@@ -1,11 +1,10 @@
 # Bug Restaurant - Website quản lý nhà hàng
 
 Dự án là website quản lý nhà hàng được xây dựng bằng HTML, CSS, JavaScript và Node.js/Express. Backend kết nối SQL Server để xử lý đăng nhập, tài khoản, món ăn, giỏ hàng, đơn hàng, kho, nhân viên, lịch làm việc và ý kiến khách hàng.
-## Home
 
 ## Demo
 
-![Demo](demo/demo.mp4)
+[Video demo](demo/demo.mp4)
 
 ## Chức năng chính
 
